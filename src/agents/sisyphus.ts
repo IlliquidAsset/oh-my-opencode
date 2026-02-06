@@ -9,6 +9,7 @@ import {
   buildDelegationTable,
   buildFrontendSection,
   buildOracleSection,
+  buildDevilsAdvocateSection,
   buildHardBlocksSection,
   buildAntiPatternsSection,
   categorizeTools,
@@ -402,6 +403,7 @@ function buildDynamicSisyphusPrompt(
   const frontendSection = buildFrontendSection(availableAgents)
   const delegationTable = buildDelegationTable(availableAgents)
   const oracleSection = buildOracleSection(availableAgents)
+  const devilsAdvocateSection = buildDevilsAdvocateSection(availableAgents)
   const hardBlocks = buildHardBlocksSection(availableAgents)
   const antiPatterns = buildAntiPatternsSection(availableAgents)
 
@@ -456,6 +458,8 @@ function buildDynamicSisyphusPrompt(
     "</Behavior_Instructions>",
     "",
     oracleSection,
+    "",
+    devilsAdvocateSection,
     "",
     SISYPHUS_TASK_MANAGEMENT,
     "",
