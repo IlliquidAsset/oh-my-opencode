@@ -27,13 +27,34 @@ agents/
 
 | Agent | Model | Fallback | Purpose |
 |-------|-------|----------|---------|
-| Sisyphus | anthropic/claude-opus-4-5 | - | Orchestrator with extended thinking |
+| Sisyphus | anthropic/claude-opus-4-6 | - | Orchestrator with extended thinking |
 | oracle | openai/gpt-5.2 | - | Architecture, debugging, review |
 | librarian | anthropic/claude-sonnet-4-5 | google/gemini-3-flash | Docs, GitHub research |
 | explore | opencode/grok-code | gemini-3-flash, haiku-4-5 | Contextual grep |
 | frontend-ui-ux-engineer | google/gemini-3-pro-preview | - | Beautiful UI code |
 | document-writer | google/gemini-3-pro-preview | - | Technical writing |
 | multimodal-looker | google/gemini-3-flash | - | Visual analysis |
+
+## MODEL NOTES
+
+### xAI Grok Model Landscape (Feb 2026)
+
+The Grok model family has evolved significantly. If you have `xai/grok-2-1212` in your configuration, **update immediately** to a newer model.
+
+| Model | Status | Recommended For |
+|-------|--------|-----------------|
+| `grok-2-1212` | **DEPRECATED** | Nothing — replace immediately |
+| `grok-3` | Stable | General reasoning (131K context) |
+| `grok-3-mini` | Stable | Lightweight tasks |
+| `grok-4` | Latest flagship | Advanced reasoning (256K context) |
+| `grok-4-fast` | Latest fast | Reasoning + speed (2M context) |
+| `grok-4-1-fast` | **Newest** | Agentic tool calling (2M context) |
+| `grok-code-fast` | Current | Coding-specific (256K context) |
+
+**Migration Guide**: If your config uses `xai/grok-2-1212`, replace it with:
+- `xai/grok-code-fast` for coding tasks (recommended for `explore` agent)
+- `xai/grok-4-1-fast` for general reasoning and tool calling
+- `xai/grok-3` for lightweight tasks with lower latency
 
 ## HOW TO ADD
 
