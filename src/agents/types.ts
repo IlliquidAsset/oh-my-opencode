@@ -64,6 +64,7 @@ export type BuiltinAgentName =
   | "frontend-ui-ux-engineer"
   | "document-writer"
   | "multimodal-looker"
+  | "devils-advocate"
 
 export type OverridableAgentName =
   | "build"
