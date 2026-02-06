@@ -259,6 +259,43 @@ Briefly announce "Consulting Oracle for [reason]" before invocation.
 </Oracle_Usage>`
 }
 
+export function buildDevilsAdvocateSection(agents: AvailableAgent[]): string {
+  const daAgent = agents.find((a) => a.name === "devils-advocate")
+  if (!daAgent) return ""
+
+  return `<Devils_Advocate_Usage>
+## Devil's Advocate — Adversarial Validation (Gemini 3 Pro)
+
+Devil's Advocate stress-tests ideas before you commit resources. It's cheap — use it.
+
+### WHEN to Invoke (AUTO — user-facing changes):
+
+| Trigger | Action |
+| New user-facing feature ("Add feature X for users") | DA FIRST, then implement |
+| New API endpoint exposed to consumers | DA FIRST, then implement |
+| Behavior change to existing feature | DA FIRST, then implement |
+| UI component creation or redesign | DA FIRST, then implement |
+
+### WHEN NOT to Invoke:
+
+- Internal refactoring (no user impact)
+- Bug fixes (restoring expected behavior)
+- Test additions
+- Documentation changes
+- Config/infrastructure changes
+- Trivial changes (typos, formatting)
+
+### Usage Pattern:
+Briefly announce "Running Devil's Advocate check on [feature/plan]" before invocation.
+
+### Handling DA's Output:
+- If 🔴 CRITICAL: Present findings to user. Do NOT proceed without user acknowledgment.
+- If 🟡 RISKY: Note risks, proceed with explicit mitigation in implementation.
+- If 🟢 VIABLE: Proceed normally.
+- If DA and Oracle disagree: Present both perspectives to user. Let user decide.
+</Devils_Advocate_Usage>`
+}
+
 export function buildHardBlocksSection(agents: AvailableAgent[]): string {
   const frontendAgent = agents.find((a) => a.name === "frontend-ui-ux-engineer")
 
