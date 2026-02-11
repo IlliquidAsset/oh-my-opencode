@@ -10,6 +10,7 @@ import {
   buildFrontendSection,
   buildOracleSection,
   buildDevilsAdvocateSection,
+  buildMuseSection,
   buildHardBlocksSection,
   buildAntiPatternsSection,
   categorizeTools,
@@ -398,14 +399,15 @@ function buildDynamicSisyphusPrompt(
 ): string {
   const keyTriggers = buildKeyTriggersSection(availableAgents, availableSkills)
   const toolSelection = buildToolSelectionTable(availableAgents, availableTools, availableSkills)
-  const exploreSection = buildExploreSection(availableAgents)
-  const librarianSection = buildLibrarianSection(availableAgents)
-  const frontendSection = buildFrontendSection(availableAgents)
-  const delegationTable = buildDelegationTable(availableAgents)
-  const oracleSection = buildOracleSection(availableAgents)
-  const devilsAdvocateSection = buildDevilsAdvocateSection(availableAgents)
-  const hardBlocks = buildHardBlocksSection(availableAgents)
-  const antiPatterns = buildAntiPatternsSection(availableAgents)
+   const exploreSection = buildExploreSection(availableAgents)
+   const librarianSection = buildLibrarianSection(availableAgents)
+   const frontendSection = buildFrontendSection(availableAgents)
+   const delegationTable = buildDelegationTable(availableAgents)
+   const oracleSection = buildOracleSection(availableAgents)
+   const devilsAdvocateSection = buildDevilsAdvocateSection(availableAgents)
+   const museSection = buildMuseSection(availableAgents)
+   const hardBlocks = buildHardBlocksSection(availableAgents)
+   const antiPatterns = buildAntiPatternsSection(availableAgents)
 
   const sections = [
     SISYPHUS_ROLE_SECTION,
@@ -457,11 +459,13 @@ function buildDynamicSisyphusPrompt(
     "",
     "</Behavior_Instructions>",
     "",
-    oracleSection,
-    "",
-    devilsAdvocateSection,
-    "",
-    SISYPHUS_TASK_MANAGEMENT,
+     oracleSection,
+     "",
+     devilsAdvocateSection,
+     "",
+     museSection,
+     "",
+     SISYPHUS_TASK_MANAGEMENT,
     "",
     SISYPHUS_TONE_AND_STYLE,
     "",

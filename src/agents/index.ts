@@ -1,6 +1,7 @@
 import type { AgentConfig } from "@opencode-ai/sdk"
 import { sisyphusAgent } from "./sisyphus"
 import { oracleAgent } from "./oracle"
+import { museAgent } from "./muse"
 import { librarianAgent } from "./librarian"
 import { exploreAgent } from "./explore"
 import { frontendUiUxEngineerAgent } from "./frontend-ui-ux-engineer"
@@ -11,6 +12,7 @@ import { devilsAdvocateAgent } from "./devils-advocate"
 export const builtinAgents: Record<string, AgentConfig> = {
   Sisyphus: sisyphusAgent,
   oracle: oracleAgent,
+  muse: museAgent,
   librarian: librarianAgent,
   explore: exploreAgent,
   "frontend-ui-ux-engineer": frontendUiUxEngineerAgent,

@@ -19,6 +19,7 @@ const AgentPermissionSchema = z.object({
 export const BuiltinAgentNameSchema = z.enum([
   "Sisyphus",
   "oracle",
+  "muse",
   "librarian",
   "explore",
   "frontend-ui-ux-engineer",
@@ -38,6 +39,7 @@ export const OverridableAgentNameSchema = z.enum([
   "OpenCode-Builder",
   "Planner-Sisyphus",
   "oracle",
+  "muse",
   "librarian",
   "explore",
   "frontend-ui-ux-engineer",
@@ -107,6 +109,7 @@ export const AgentOverridesSchema = z.object({
   "OpenCode-Builder": AgentOverrideConfigSchema.optional(),
   "Planner-Sisyphus": AgentOverrideConfigSchema.optional(),
   oracle: AgentOverrideConfigSchema.optional(),
+  muse: AgentOverrideConfigSchema.optional(),
   librarian: AgentOverrideConfigSchema.optional(),
   explore: AgentOverrideConfigSchema.optional(),
   "frontend-ui-ux-engineer": AgentOverrideConfigSchema.optional(),

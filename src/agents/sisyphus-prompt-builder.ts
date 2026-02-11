@@ -260,10 +260,10 @@ Briefly announce "Consulting Oracle for [reason]" before invocation.
 }
 
 export function buildDevilsAdvocateSection(agents: AvailableAgent[]): string {
-  const daAgent = agents.find((a) => a.name === "devils-advocate")
-  if (!daAgent) return ""
+   const daAgent = agents.find((a) => a.name === "devils-advocate")
+   if (!daAgent) return ""
 
-  return `<Devils_Advocate_Usage>
+   return `<Devils_Advocate_Usage>
 ## Devil's Advocate — Adversarial Validation (Gemini 3 Pro)
 
 Devil's Advocate stress-tests ideas before you commit resources. It's cheap — use it.
@@ -294,6 +294,54 @@ Briefly announce "Running Devil's Advocate check on [feature/plan]" before invoc
 - If 🟢 VIABLE: Proceed normally.
 - If DA and Oracle disagree: Present both perspectives to user. Let user decide.
 </Devils_Advocate_Usage>`
+}
+
+export function buildMuseSection(agents: AvailableAgent[]): string {
+   const museAgent = agents.find((a) => a.name === "muse")
+   if (!museAgent) return ""
+
+   return `<Muse_Usage>
+## Muse — Divergent Creativity Advisor (Gemini 3 Pro)
+
+Muse is the team's creative advisor and the only divergent thinker. Use Muse when you need to expand the solution space, reframe assumptions, or escape conventional patterns.
+
+### When to Invoke
+
+| Mode | Trigger | Action |
+|------|---------|--------|
+| **Early Reframer** | Complex problem with multiple valid architectures | Muse FIRST to generate options, then Oracle evaluates |
+| **Stuck Mode** | 2+ failed conventional approaches | Muse for lateral thinking, not deeper analysis |
+| **Greenfield Ideation** | New feature/architecture with unclear best path | Muse to explore option space before committing |
+
+### What Muse Produces
+
+Muse returns exactly 3 categorically diverse approaches, each with:
+- The assumption it challenges
+- The specific insight it offers  
+- Why the team should consider it
+
+### Oracle Partnership Pipeline
+
+For maximum effectiveness, use this sequence:
+1. **Brief Oracle consultation** (optional): Identify the conventional path + key assumptions to challenge
+2. **Invoke Muse**: Present problem + Oracle's framing (if available)
+3. **Evaluate Muse's options**: Select for novelty × feasibility
+4. **Implement**: Proceed with the selected creative direction
+
+### When NOT to Invoke
+
+- Simple tasks with one obvious solution
+- When you need critique (use Devil's Advocate)
+- When you need analysis (use Oracle)
+- When you need research (use Librarian/Explore)
+- When implementation details are already clear
+
+### Usage Pattern
+
+Briefly announce "Consulting Muse for creative exploration" before invocation.
+
+Muse operates at temperature 0.7 — higher variance than other advisors. Expect unconventional ideas that require careful evaluation.
+</Muse_Usage>`
 }
 
 export function buildHardBlocksSection(agents: AvailableAgent[]): string {

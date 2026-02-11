@@ -2,7 +2,7 @@
 
 ## OVERVIEW
 
-7 AI agents for multi-model orchestration. Sisyphus orchestrates, specialists handle domains.
+9 AI agents for multi-model orchestration. Sisyphus orchestrates, specialists handle domains.
 
 ## STRUCTURE
 
@@ -16,6 +16,8 @@ agents/
 ├── document-writer.ts       # Technical docs
 ├── multimodal-looker.ts     # PDF/image analysis
 ├── devils-advocate.ts       # Adversarial validation
+├── muse.ts                  # Divergent creativity
+├── muse.test.ts             # Muse agent tests
 ├── sisyphus-prompt-builder.ts  # Sisyphus prompt construction
 ├── build-prompt.ts          # Shared build agent prompt
 ├── plan-prompt.ts           # Shared plan agent prompt
@@ -36,6 +38,7 @@ agents/
 | document-writer | google/gemini-3-pro-preview | - | Technical writing |
 | multimodal-looker | google/gemini-3-flash | - | Visual analysis |
 | devils-advocate | google/gemini-3-pro-preview | - | Adversarial validation |
+| muse | google/gemini-3-pro-preview | - | Divergent creativity |
 
 ## MODEL NOTES
 
